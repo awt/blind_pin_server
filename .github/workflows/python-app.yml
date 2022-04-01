@@ -30,14 +30,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: docker login
-      env:
-        DOCKER_USER: ${{secrets.DOCKER_USER}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-    - name: Build the docker image
-      run: docker build . --file Dockerfile --tag blind_bin_server/test:$(date +%s)
+   # - name: docker login
+   #   env:
+   #     DOCKER_USER: ${{secrets.DOCKER_USER}}
+   #     DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+   #   run: |
+   #     docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+   # - name: Build the docker image
+   #   run: docker build . --file Dockerfile --tag blind_bin_server/test:$(date +%s)
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
       with:
