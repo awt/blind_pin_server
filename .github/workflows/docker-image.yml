@@ -28,4 +28,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag blind_pin_server:$(date +%s)
     - name: Run the image
-      run: docker run -v $PWD/server_private_key.key:/server_private_key.key -v $PWD/pinsdir:/pins -p 8096:8096 dockerized_pinserver
+      run: docker run -v $PWD/server_private_key.key:/server_private_key.key -v $PWD/pinsdir:/pins -p 8096:8096 blind_pin_server
