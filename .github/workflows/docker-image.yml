@@ -26,4 +26,4 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag blind_pin_server:$(date +%s)
+      run: docker build --file pinserver/Dockerfile pinserver/ -t dockerized_pinserver  --tag blind_pin_server:$(date +%s)
